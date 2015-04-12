@@ -102,24 +102,13 @@
                 <button class="counter-action plus">плюс</button>
               </div>
             </div>
-            <div class="col s-4">
+            <div class="col s-4 s-4--js">
             </div>
           </div>
 
-          <!-- <div class="row">
-            <div class="col s-4">
-              <label for="text8">Фамилия взрослого №1: <span>*</span></label>
-              <input type="text" id="text8">
-            </div>
-            <div class="col s-4">
-              <label for="text9">Имя взрослого №1: <span>*</span></label>
-              <input type="text" id="text9">
-            </div>
-            <div class="col s-4">
-              <label for="text10">Отчество взрослого №1</label>
-              <input type="text" id="text10">
-            </div>
-          </div> -->
+          <div class="row row--parent">
+            
+          </div>
 
           <!-- <div class="row">
             <div class="col s-4">
@@ -136,20 +125,9 @@
             </div>
           </div> -->
 
-          <!-- <div class="row">
-            <div class="col s-4">
-              <label for="text14">Фамилия ребенка №1: <span>*</span></label>
-              <input type="text" id="text14">
-            </div>
-            <div class="col s-4">
-              <label for="text15">Имя ребенка №1: <span>*</span></label>
-              <input type="text" id="text15">
-            </div>
-            <div class="col s-4">
-              <label for="text16">Отчество ребенка №1</label>
-              <input type="text" id="text16">
-            </div>
-          </div> -->
+          <div class="row row--children">
+          
+          </div>
 
         </div>
 
@@ -258,6 +236,45 @@
       </div>
     </div>
   </div>
+  <script src="js/mustache.min.js"></script>
+
+  <script id="parent-info" type="text/html">
+
+    <div class="row">
+      <div class="col s-4">
+        <label>Фамилия взрослого {{parentCount}}: <span>*</span></label>
+        <input type="text">
+      </div>
+      <div class="col s-4">
+        <label>Имя взрослого {{parentCount}}: <span>*</span></label>
+        <input type="text">
+      </div>
+      <div class="col s-4">
+        <label>Отчество взрослого {{parentCount}}:</label>
+        <input type="text">
+      </div>
+    </div>
+
+  </script>
+
+  <script id="child-info" type="text/html">
+
+    <div class="row">
+      <div class="col s-4">
+        <label>Фамилия ребенка {{childCount}}: <span>*</span></label>
+        <input type="text" >
+      </div>
+      <div class="col s-4">
+        <label>Имя ребенка {{childCount}}: <span>*</span></label>
+        <input type="text">
+      </div>
+      <div class="col s-4">
+        <label>Отчество ребенка {{childCount}}:</label>
+        <input type="text" >
+      </div>
+    </div>
+
+  </script>
 
   <script src="js/script.js"></script>
 </body>
