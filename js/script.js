@@ -18,6 +18,22 @@ function Counter(input, minVal, maxVal ) {
     var target = input;
     if(target.value >= minVal) {
       target.value -= 1;
+
+      // Если передаваемое значение - взрослые
+
+      if (input == peoples) {
+        var container = body.querySelector(".row--parent");
+        var lastChild = container.children[target.value];
+        container.removeChild(lastChild);
+      }
+
+      // Если передаваемое значение - дети
+
+      else if (input == childrens) {
+        var container = body.querySelector(".row--children");
+        var lastChild = container.children[target.value];
+        container.removeChild(lastChild);
+      }
     }
   })
 
@@ -27,7 +43,26 @@ function Counter(input, minVal, maxVal ) {
     if(target.value <= maxVal) {
       var countVal = parseInt(target.value) + 1;
       target.value = +countVal
+
+      if (input == peoples) {
+        var container = body.querySelector(".row--parent");
+        var parentInfo = body.querySelector("#parent-info").innerHTML;
+        var html = Mustache.render(parentInfo, {
+          "parentCount": input.value
+        });
+        container.innerHTML = container.innerHTML + html;
+      }
+
+      else if (input == childrens) {
+        var container = body.querySelector(".row--children");
+        var parentInfo = body.querySelector("#child-info").innerHTML;
+        var html = Mustache.render(parentInfo, {
+          "childCount": input.value
+        });
+        container.innerHTML = container.innerHTML + html;
+      }
     }
+
   })
 }
 
